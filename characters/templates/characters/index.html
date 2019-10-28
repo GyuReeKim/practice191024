@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+  <h1>index</h1>
+  {% for character in characters %}
+    <h3>{{character.name}}</h3>
+    <a href="{% url 'characters:detail' character.id %}">상세보기</a>
+    <hr>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+  <h1>detail</h1>
+  <h3>{{character.name}} / {{character.role}}</h3>
+  <h5>{{character.description}}</h5>
+  {% if user.is_authenticated and user != character.user %}
+    <a href="{% url 'characters:like' character.id %}">좋아요</a>
+  {% endif %}
+  <h5>{{character.like_users.count}}</h5>
+{% endblock %}
